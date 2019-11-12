@@ -1,0 +1,126 @@
+<!doctype html>
+<script type="text/javascript" src="/uat/cdn/js/jquery.1.8.3.js"></script>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>静安学校安全管理平台</title>
+  <style type="text/css">
+	  .codeDiv {
+	  	width: 100%;
+	  	text-align: center;
+	  }
+	   .appCode {
+/* 	   	width:768px; */
+	  	text-align: center;
+	  	margin: 0 auto;
+	  	padding-top:10%;
+	  }
+	  .appCode img.code {
+	  	width: 40%;
+	  }
+	  .appCode .arrow{
+	  	width: 3rem;
+	  }
+	  @media screen and (min-width:320px) and (max-width:1000px) {
+		    .appCode img.code {
+		        width: 50%;
+		    }
+		    .appCode .arrow{
+			  	width: 10rem;
+		  	}
+		  	.appCode .text{
+			  	font-size: 3rem;
+		  	}
+		}
+	  @media screen and (min-width:1000px) and (max-width:1920px) {
+		    .appCode img.code {
+		        width: 10rem;
+		    }
+		    .appCode .arrow{
+			  	width: 5rem;
+		  	}
+		  	.appCode .text{
+			  	font-size: 1rem;
+		  	}
+		}
+		.androidBtn {
+			  width: 40%;
+			  height: 120px;
+			  font-size: 45px;
+			  color: #FFFFFF;
+			  font-weight: 900;
+			  background-color: black;
+			  margin-left: 30px;
+	  }
+  </style>
+ </head>
+ <body>
+  <div class="codeDiv">
+  	<div class="appCode">
+  		<img class="code" src="ios/img/scanCode.png">
+  		<p><img class="arrow" src="ios/img/arrow_up_icon.png"></p>
+  		<p class="text">扫描二维码下载安装</p>
+  		<input type="button" class="androidBtn" onclick="window.location.href = 'https://raw.githubusercontent.com/myHjm/QRcode/master/schoolSafe-hp.apk';" value="安卓下载">
+  		<input type="button" class="androidBtn" onclick="window.location.href = 'https://raw.githubusercontent.com/myHjm/QRcode/master/jwaq.ios.html';" value="ios下载">
+  	</div>
+  </div>
+ </body>
+ <script type="text/javascript">
+//c=Q23DR32是注册时扫描获取的邀请码。
+ // 这样加参数，后面的参数会被自动忽略，不会影响加载此网页
+$(function(){
+	   goDownload(); 
+});	
+  
+     // 去下载
+     function goDownload() {
+         var u = navigator.userAgent, app = navigator.appVersion;
+         var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1;
+         var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+         // 这里是安卓浏览器
+         if (isAndroid) {
+             window.location.href = 'Android/jwaq.apk'; // 跳安卓端下载地址
+         }
+         // 这里是iOS浏览器
+         if (isIOS) {
+             window.location.href = 'ios/jwaq.ios.html'; // 跳AppStore下载地址
+         }
+
+         // 是微信内部webView
+         if (is_weixn()) {
+             alert("请点击右上角按钮, 点击使用浏览器打开");
+         }
+
+         // 是PC端
+        /* if (IsPC()) {
+             window.location.href = 'https://xyaq.shec.edu.cn/new/';  // 公司主页
+         }*/
+     }
+
+     // 是微信浏览器
+     function is_weixn(){
+         var ua = navigator.userAgent.toLowerCase();
+         if(ua.match(/MicroMessenger/i)=="micromessenger") {
+             return true;
+         } else {
+             return false;
+         }
+     }
+
+
+     function IsPC() {
+         var userAgentInfo = navigator.userAgent;
+         var Agents = ["Android", "iPhone",
+             "SymbianOS", "Windows Phone",
+             "iPad", "iPod"];
+         var flag = true;
+         for (var v = 0; v < Agents.length; v++) {
+             if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                 flag = false;
+                 break;
+             }
+         }
+         return flag;
+     }
+ </script>
+</html>

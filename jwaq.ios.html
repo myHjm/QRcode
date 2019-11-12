@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html lang="en" class="ie7"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en"> <!--<![endif]-->
+<head>
+    <title>校园安全</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport"  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no minimal-ui">
+	<style>
+		.isImg{
+			overflow: hidden;
+		    margin-bottom: 10px;
+		    width: 20%;
+		    position: absolute;
+		    top: 10px;
+		    right: 15px;
+		}
+	</style>
+</head>
+
+<body>
+	
+<div style="text-align:center; margin-top: 30%;">
+<a id="install" style="color:#000000; margin-top: 20%; font-size: 30px; font-weight: 900;" href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/myHjm/QRcode/master/manifest.plist" id="text">点击右上角<br>选择用手机浏览器打开下载</a>
+<img id="onImg" class="isImg" src="../../images/WechatIMG7.jpeg"/>
+<script type="text/javascript">
+window.onload=function(){
+	document.getElementById("install").click();
+}
+var ua = navigator.userAgent.toLowerCase();//获取判断用的对象
+
+if (ua.match(/MicroMessenger/i) == "micromessenger") {
+        //在微信中打开
+}else{
+	document.getElementById("install").innerText = "【下载中...】";
+	document.getElementById("onImg").style.display = "none";
+}
+
+</script>
+<div>
+</body>
+</html>
