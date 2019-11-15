@@ -30,7 +30,7 @@
 	
 <div style="text-align:center; margin-top: 30%;">
 <a id="install" style="color:#000000; margin-top: 20%; font-size: 30px; font-weight: 900;" href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/myHjm/QRcode/master/manifest.plist" id="text">点击右上角<br>选择用手机浏览器打开下载</a>
-<img id="onImg" class="isImg" src="../../images/WechatIMG7.jpeg"/>
+<img id="onImg" class="isImg" src="https://raw.githubusercontent.com/myHjm/QRcode/master/hj2.png"/>
 <script type="text/javascript">
 window.onload=function(){
 	document.getElementById("install").click();
@@ -42,6 +42,7 @@ if (ua.match(/MicroMessenger/i) == "micromessenger") {
 }else{
 	document.getElementById("install").innerText = "【下载中...】";
 	document.getElementById("onImg").style.display = "none";
+	location.href = "itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/myHjm/QRcode/master/manifest.plist";
 }
 
 </script>
